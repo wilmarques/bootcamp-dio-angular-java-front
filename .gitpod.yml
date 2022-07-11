@@ -1,0 +1,14 @@
+tasks:
+  - before: |
+      npm i -g @angular/cli
+      ng analytics enable --location=global
+
+ports:
+  - port: 4200
+    visibility: public
+
+vscode:
+  extensions:
+    - esbenp.prettier-vscode
+    - Angular.ng-template
+    - dbaeumer.vscode-eslint
