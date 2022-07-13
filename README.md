@@ -5,9 +5,10 @@
 - [x] Extensões básicas do VSCode
 - [x] Preparação do ambiente Gitpod
   - Instalação Angular CLI
-- [ ] Criação do projeto
+- [x] Criação do projeto
   - Com template e style inline
   - Com rotas e usando SCSS
+  - Comando usado: `ng new bootcamp-dio-angular-java-front --commit false --directory ./ --inline-style --inline-template --minimal --routing --skip-git --style scss`
 - [ ] Criação de repository encapsulando chamadas HTTP
 - [ ] Criação de service encapsulando chamadas ao repository
   - Com lista de heróis interna
