@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  heroesApiUrl:
+    'https://8080-wilmarques-bootcampdioa-oem919if26z.ws-us54.gitpod.io/',
 };
 
 /*

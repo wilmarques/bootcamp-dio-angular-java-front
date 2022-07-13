@@ -12,7 +12,7 @@
 - [x] Heroes module
   - Comando: `ng generate module heroes --route heroes --routing true`
 - [x] Hero model
-- [ ] Criação de repository encapsulando chamadas HTTP
+- [x] Criação de repository encapsulando chamadas HTTP
   - Comando: `ng generate service heroes-repository`
 - [ ] Criação de service encapsulando chamadas ao repository
   - Com lista de heróis interna
