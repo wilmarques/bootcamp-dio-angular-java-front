@@ -1,8 +1,11 @@
-
 tasks:
   - before: |
       npm i -g @angular/cli
       ng analytics enable --global
+
+ports:
+  - port: 4200
+    visibility: public
 
 vscode:
   extensions:
