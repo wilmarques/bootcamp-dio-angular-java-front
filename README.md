@@ -9,9 +9,9 @@
   - Com template e style inline
   - Com rotas e usando SCSS
   - Comando usado: `ng new bootcamp-dio-angular-java-front --commit false --directory ./ --inline-style --inline-template --minimal --routing --skip-git --style scss`
-- [x] Hero module
+- [x] Heroes module
   - Comando: `ng generate module heroes --route heroes --routing true`
-- [ ] Hero model
+- [x] Hero model
 - [ ] Criação de repository encapsulando chamadas HTTP
   - Comando: `ng generate service heroes-repository`
 - [ ] Criação de service encapsulando chamadas ao repository
