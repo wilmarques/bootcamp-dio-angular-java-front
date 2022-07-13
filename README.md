@@ -3,7 +3,7 @@
 ## Consumindo APIs a partir de front-end Angular com um back-end Java
 
 - [x] Extensões básicas do VSCode
-- [ ] Preparação do ambiente Gitpod
+- [x] Preparação do ambiente Gitpod
   - Instalação Angular CLI
 - [ ] Criação do projeto
   - Com template e style inline

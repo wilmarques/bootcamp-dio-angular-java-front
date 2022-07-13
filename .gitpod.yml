@@ -1,4 +1,9 @@
 
+tasks:
+  - before: |
+      npm i -g @angular/cli
+      ng analytics enable --global
+
 vscode:
   extensions:
     - esbenp.prettier-vscode
