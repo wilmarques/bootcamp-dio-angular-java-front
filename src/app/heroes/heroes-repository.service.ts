@@ -1,8 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
+import { Hero } from './hero';
 import { environment } from '../../environments/environment';
+
+type HeroesApiGetResponse = {
+  _embedded: {
+    heroList: Array<Hero>;
+  };
+};
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +17,12 @@ import { environment } from '../../environments/environment';
 export class HeroesRepositoryService {
   private readonly heroesApiEndpoint = environment.heroesApiUrl;
 
-  constructor(private readonly httpClient: HttpClient) {}
+  constructor(private readonly httpClient: HttpClient) { }
 
   public all(): Observable<Array<Hero>> {
-    return this.httpClient.get<Array<Hero>>(this.heroesApiEndpoint);
+    return this.httpClient.get<HeroesApiGetResponse>(this.heroesApiEndpoint).pipe(
+      map((response) => response._embedded.heroList),
+    );
   }
 
   public newHero(newHero: Hero): Observable<Hero> {

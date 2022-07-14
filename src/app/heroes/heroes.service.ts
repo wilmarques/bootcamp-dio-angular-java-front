@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, EMPTY, noop, Observable, of } from 'rxjs';
 import { tap, mergeMap, map, ignoreElements } from 'rxjs/operators';
 
+import { Hero } from './hero';
 import { HeroesRepositoryService } from './heroes-repository.service';
 
 @Injectable({

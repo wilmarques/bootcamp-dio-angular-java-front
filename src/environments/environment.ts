@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   heroesApiUrl:
-    'https://8080-wilmarques-bootcampdioa-oem919if26z.ws-us54.gitpod.io/',
+    'https://8080-wilmarques-bootcampdioa-oem919if26z.ws-us54.gitpod.io/heroes',
 };
 
 /*

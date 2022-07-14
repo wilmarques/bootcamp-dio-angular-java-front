@@ -20,11 +20,13 @@
   - Com lista de heróis interna
   - Notificando de alteração de lista
 - [ ] Rota de listagem de heróis
-  - Propriedade heróis no componente
-  - Subscribe
+  - [x] Subscribe
+    - Propriedade heróis no componente
     - Começar chamando Service sem fazer subscribe e explicar pq não deu certo
-  - Unsubscribe no onDestroy
-  - Pipe Async, removendo subscribe/unsubscribe e propriedade heróis do componente
+    - Vai dar erro de CORS
+  - [ ] Proxy para API, evitando CORS
+  - [ ] Unsubscribe no onDestroy
+  - [ ] Pipe Async, removendo subscribe/unsubscribe e propriedade heróis do componente
 - [ ] Rota para inclusão de herói
   - Consome Service
   - Retorna para listagem
