@@ -31,13 +31,13 @@
   - Consome Service
   - Retorna para listagem
   - Comando: `cd src/app/heroes`
-  - Comando: `ng g component new-hero --module heroes`
-- [ ] Rota para alteração de herói
+  - Comando: `ng g component new-hero --module heroes --flat`
+- [x] Rota para alteração de herói
   - Consome Service
   - Retorna para listagem
-- [ ] Na rota de listagem de heróis, botão de editar que vai para a rota de edição
-  - Consome Service
-  - Retorna para listagem
+  - Comando: `cd src/app/heroes`
+  - Comando: `ng g component edit-hero --module heroes --flat`
+  - Na rota de listagem de heróis, botão de editar que vai para a rota de edição
 - [ ] Na rota de listagem do herói, botão de exclusão do herói
   - Exibe botão para confirmar exclusão
 - [ ] Estilização simples de tudo (opcional)

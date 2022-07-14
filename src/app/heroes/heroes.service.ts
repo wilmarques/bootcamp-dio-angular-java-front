@@ -71,7 +71,6 @@ export class HeroesService {
     modifiedHero: Hero,
     currentHeroes: Array<Hero>,
   ): void {
-    debugger;
     const currentHeroIndex = currentHeroes.findIndex(
       (hero) => hero.id === modifiedHero.id,
     );

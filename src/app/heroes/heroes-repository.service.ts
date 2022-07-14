@@ -30,26 +30,17 @@ export class HeroesRepositoryService {
   }
 
   public one(heroId: number): Observable<Hero> {
-    return this.httpClient.get<Hero>(this.heroesApiEndpoint, {
-      params: {
-        id: heroId,
-      },
-    });
+    const heroesApiEndpointWithHeroId = `${this.heroesApiEndpoint}${heroId}`;
+    return this.httpClient.get<Hero>(heroesApiEndpointWithHeroId);
   }
 
   public replaceHero(newHero: Hero, currentHeroId: number): Observable<Hero> {
-    return this.httpClient.put<Hero>(this.heroesApiEndpoint, newHero, {
-      params: {
-        id: currentHeroId,
-      },
-    });
+    const heroesApiEndpointWithHeroId = `${this.heroesApiEndpoint}${currentHeroId}`;
+    return this.httpClient.put<Hero>(heroesApiEndpointWithHeroId, newHero);
   }
 
   public deleteHero(heroId: number): Observable<void> {
-    return this.httpClient.delete<void>(this.heroesApiEndpoint, {
-      params: {
-        id: heroId,
-      },
-    });
+    const heroesApiEndpointWithHeroId = `${this.heroesApiEndpoint}${heroId}`;
+    return this.httpClient.delete<void>(heroesApiEndpointWithHeroId);
   }
 }

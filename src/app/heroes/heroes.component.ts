@@ -8,7 +8,10 @@ import { HeroesService } from './heroes.service';
     <h1>Heróis</h1>
     <a routerLink="hero">Novo herói</a>
     <ul *ngFor="let hero of heroes$ | async">
-      <li>{{ hero.name }} - {{ hero.description }}</li>
+      <li>
+        {{ hero.name }} - {{ hero.description }} -
+        <a [routerLink]="['hero', hero.id]">Editar</a>
+      </li>
     </ul>
   `,
   styles: [],

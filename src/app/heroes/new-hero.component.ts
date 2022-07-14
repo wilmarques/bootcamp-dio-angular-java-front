@@ -24,7 +24,7 @@ import { HeroesService } from './heroes.service';
       />
 
       <p>Preencha os campos para inserir.</p>
-      <button type="submit" [disabled]="!newHeroForm.valid">Submit</button>
+      <button type="submit" [disabled]="!newHeroForm.valid">Enviar</button>
     </form>
   `,
   styles: [],
@@ -35,7 +35,7 @@ export class NewHeroComponent {
     description: new FormControl(''),
   });
 
-  get hero(): Hero {
+  private get hero(): Hero {
     const name = this.newHeroForm.get('name')?.value!;
     const description = this.newHeroForm.get('description')?.value!;
     return {
