@@ -19,14 +19,14 @@
   - Comando: `ng generate service heroes`
   - Com lista de heróis interna
   - Notificando de alteração de lista
-- [ ] Rota de listagem de heróis
+- [x] Rota de listagem de heróis
   - [x] Subscribe simples
     - Propriedade heróis no componente
     - Começar chamando Service sem fazer subscribe e explicar pq não deu certo
     - Vai dar erro de CORS
   - [x] Proxy para API, evitando CORS
-  - [ ] Unsubscribe no onDestroy
-  - [ ] Pipe Async, removendo subscribe/unsubscribe e propriedade heróis do componente
+  - [x] Unsubscribe no onDestroy
+  - [x] Pipe Async, removendo subscribe/unsubscribe e propriedade heróis do componente
 - [ ] Rota para inclusão de herói
   - Consome Service
   - Retorna para listagem
