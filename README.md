@@ -14,7 +14,9 @@
 - [x] Hero model
 - [x] Criação de repository encapsulando chamadas HTTP
   - Comando: `ng generate service heroes-repository`
-- [ ] Criação de service encapsulando chamadas ao repository
+- [x] Criação de service encapsulando chamadas ao repository
+  - Comando: `cd src/app/heroes`
+  - Comando: `ng generate service heroes`
   - Com lista de heróis interna
   - Notificando de alteração de lista
 - [ ] Rota de listagem de heróis
