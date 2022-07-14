@@ -27,9 +27,11 @@
   - [x] Proxy para API, evitando CORS
   - [x] Unsubscribe no onDestroy
   - [x] Pipe Async, removendo subscribe/unsubscribe e propriedade heróis do componente
-- [ ] Rota para inclusão de herói
+- [x] Rota para inclusão de herói
   - Consome Service
   - Retorna para listagem
+  - Comando: `cd src/app/heroes`
+  - Comando: `ng g component new-hero --module heroes`
 - [ ] Rota para alteração de herói
   - Consome Service
   - Retorna para listagem

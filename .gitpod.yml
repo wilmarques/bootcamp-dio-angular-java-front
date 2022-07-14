@@ -1,7 +1,7 @@
 tasks:
   - before: |
       npm i -g @angular/cli
-      ng analytics enable --global
+      ng analytics enable --location=global
 
 ports:
   - port: 4200

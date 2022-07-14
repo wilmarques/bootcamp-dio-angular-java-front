@@ -11,48 +11,53 @@ import { HeroesRepositoryService } from './heroes-repository.service';
 export class HeroesService {
   public heroes = new BehaviorSubject<Array<Hero>>([]);
 
+  private loaded = false;
+
   constructor(private readonly repository: HeroesRepositoryService) {}
 
   public loadHeroes(): Observable<Array<Hero>> {
-    return this.repository
-      .all()
-      .pipe(tap((heroes) => this.heroes.next(heroes)));
+    if (this.loaded === true) {
+      return this.heroes;
+    }
+
+    return this.repository.all().pipe(
+      tap((heroes) => this.heroes.next(heroes)),
+      tap(() => (this.loaded = true)),
+    );
   }
 
   public getHero(heroId: number): Observable<Hero> {
     return this.repository.one(heroId);
   }
 
-  public createHero(newHero: Hero): Observable<Array<Hero>> {
-    return this.repository.newHero(newHero).pipe(
-      mergeMap(() => this.heroes),
-      tap((currentHeroes) =>
-        this.addNewHeroToCurrentList(newHero, currentHeroes),
-      ),
-    );
+  public createHero(newHero: Hero): Observable<Hero> {
+    return this.repository
+      .newHero(newHero)
+      .pipe(
+        tap((createdHero) =>
+          this.addNewHeroToCurrentList(createdHero, this.heroes.value),
+        ),
+      );
   }
 
-  public modifyHero(
-    modifiedHero: Hero,
-    heroId: number,
-  ): Observable<Array<Hero>> {
-    return this.repository.replaceHero(modifiedHero, heroId).pipe(
-      mergeMap(() => this.heroes),
-      tap((currentHeroes) =>
-        this.modifyHeroOnCurrentList(modifiedHero, currentHeroes),
-      ),
-    );
+  public modifyHero(newHero: Hero, currentHeroId: number): Observable<Hero> {
+    return this.repository
+      .replaceHero(newHero, currentHeroId)
+      .pipe(
+        tap((modifiedHero) =>
+          this.modifyHeroOnCurrentList(modifiedHero, this.heroes.value),
+        ),
+      );
   }
 
   public deleteHero(heroToBeDeleted: Hero): Observable<void> {
-    return this.repository.deleteHero(heroToBeDeleted.id).pipe(
-      mergeMap(() => this.heroes),
-      tap((currentHeroes) =>
-        this.removeHeroFromCurrentList(heroToBeDeleted, currentHeroes),
-      ),
-      // mergeMap(() => of()), // Returns nothing
-      ignoreElements(),
-    );
+    return this.repository
+      .deleteHero(heroToBeDeleted.id)
+      .pipe(
+        tap(() =>
+          this.removeHeroFromCurrentList(heroToBeDeleted, this.heroes.value),
+        ),
+      );
   }
 
   private addNewHeroToCurrentList(
@@ -78,7 +83,9 @@ export class HeroesService {
     removedHero: Hero,
     currentHeroes: Array<Hero>,
   ): void {
-    const newHeroesList = currentHeroes.filter((hero) => hero.id !== removedHero.id);
+    const newHeroesList = currentHeroes.filter(
+      (hero) => hero.id !== removedHero.id,
+    );
     this.heroes.next(newHeroesList);
   }
 }
