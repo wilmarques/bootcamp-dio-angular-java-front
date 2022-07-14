@@ -16,11 +16,20 @@ import { HeroesService } from './heroes.service';
       <input type="hidden" id="id" name="id" formControlName="id" />
 
       <label for="name">Nome: </label>
-      <input id="name" type="text" formControlName="name" required />
+      <input
+        id="name"
+        type="text"
+        placeholder="Nome"
+        aria-label="Nome"
+        formControlName="name"
+        required
+      />
 
       <label for="description">Descrição: </label>
       <textarea
         id="description"
+        placeholder="Descrição"
+        aria-label="Descrição"
         formControlName="description"
         required
       >

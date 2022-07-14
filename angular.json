@@ -48,7 +48,10 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/@picocss/pico/css/pico.fluid.classless.min.css"
+            ],
             "scripts": []
           },
           "configurations": {

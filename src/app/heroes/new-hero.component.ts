@@ -13,17 +13,27 @@ import { HeroesService } from './heroes.service';
     <h1>Novo herói</h1>
     <form [formGroup]="newHeroForm" (ngSubmit)="onSubmit()">
       <label for="name">Nome: </label>
-      <input id="name" type="text" formControlName="name" required />
-
-      <label for="description">Descrição: </label>
       <input
-        id="description"
+        id="name"
         type="text"
-        formControlName="description"
+        placeholder="Nome"
+        aria-label="Nome"
+        formControlName="name"
         required
       />
 
+      <label for="description">Descrição: </label>
+      <textarea
+        id="description"
+        placeholder="Descrição"
+        aria-label="Descrição"
+        formControlName="description"
+        required
+      >
+      </textarea>
+
       <p>Preencha os campos para inserir.</p>
+      
       <button type="submit" [disabled]="!newHeroForm.valid">Enviar</button>
     </form>
   `,

@@ -9,17 +9,17 @@ import { HeroesService } from './heroes.service';
   template: `
     <h1>Heróis</h1>
     <a routerLink="hero">Novo herói</a>
-    <ul *ngFor="let hero of heroes$ | async">
-      <li>
-        {{ hero.name }}
-        -
-        {{ hero.description }}
-        -
-        <a [routerLink]="['hero', hero.id]">Editar</a>
-        -
-        <button type="button" (click)="deleteHero(hero)">Excluir</button>
-      </li>
-    </ul>
+
+    <table role="grid">
+      <tbody>
+        <tr *ngFor="let hero of heroes$ | async">
+          <th scope="row">{{ hero.name }}</th>
+          <td>{{ hero.description }}</td>
+          <td><a [routerLink]="['hero', hero.id]">Editar</a></td>
+          <td><a (click)="deleteHero(hero)">Excluir</a></td>
+        </tr>
+      </tbody>
+    </table>
   `,
   styles: [],
 })

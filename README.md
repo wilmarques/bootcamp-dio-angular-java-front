@@ -39,7 +39,7 @@
   - Comando: `ng g component edit-hero --module heroes --flat`
   - Na rota de listagem de heróis, botão de editar que vai para a rota de edição
 - [x] Botão de exclusão do herói
-- [ ] Estilização simples de tudo (opcional)
+- [x] Estilização
 
 ## Referências
 
